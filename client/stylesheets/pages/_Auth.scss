@@ -49,7 +49,27 @@
       margin-bottom: 15px;
       padding: 0;
     }
+    .birth-day {
+      width: 30%;
+      min-width: 100px !important;
+    }
   }
+  .ui.form {
+    .birth-field {
+      display: flex;
+      justify-content: space-between;
+    }
+    .gender {
+      display: flex;
+      .radio {
+        margin-right: 15px;
+      }
+    }
+    .conditions {
+      text-align: left;
+      font-size: 12px;
+    }
+  } 
   .ui.form .field .ui.input input {
     height: 3rem;
   }

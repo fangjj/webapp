@@ -21,21 +21,37 @@ class Signup extends React.Component {
       username: '',
       password: '',
       accepted: true,
-      month: ''
+      month: '',
+      day: '',
+      year: '',
+      gender: 'male'
     }
     this.register = this.register.bind(this)
   }
 
   componentWillMount () {
-    let month = []
+    let day = [], month = [], year = []
     for (let i = 1; i < 32; i++) {
       const value = {
         value: i,
         text: i
       }
-      month.push(value)
+      if(i < 13) {
+        month.push(value)
+      }        
+      day.push(value)
     }
+    this.setState({day: day})
     this.setState({month: month})
+
+    for (let j = 1960; j < 2018; j++ ) {
+      const value = {
+        value: j,
+        text: j
+      }
+      year.push(value)
+    }
+    this.setState({year: year})
   }
 
   componentDidMount () {
@@ -52,7 +68,15 @@ class Signup extends React.Component {
     this.props.client.resetStore()
   }
 
-  selectBirthDay = (e, data) => {
+  setBirthDay = (e, data) => {
+    console.log(data.value)
+  }
+
+  setBirthMonth = (e, data) => {
+    console.log(data.value)
+  }
+
+  setBirthYear = (e, data) => {
     console.log(data.value)
   }
 
@@ -148,7 +172,7 @@ class Signup extends React.Component {
 
   render () {
     const { t } = this.props
-    console.log(this.state.month)
+    console.log(this.state.gender)
     return (
       <div className='auth-page'>
         <SEO
@@ -227,33 +251,54 @@ class Signup extends React.Component {
                     onChange={(event) => this.setState({ username: event.target.value })}
                   />
                 </Form.Field>
-                <Form.Field>
+                <Form.Field className="birth-field">
                   <Dropdown 
-                    onChange = {this.selectBirthDay}
-                    placeholder='State'
+                    onChange = {this.setBirthDay}
+                    placeholder='Day'
+                    search selection options={this.state.day}
+                    className="birth-day"
+                  />
+                  <Dropdown 
+                    onChange = {this.setBirthMonth}
+                    placeholder='Month'
                     search selection options={this.state.month}
                     className="birth-day"
                   />
                   <Dropdown 
-                    onChange = {this.selectBirthDay}
-                    placeholder='State'
-                    search selection options={this.state.month}
-                    className="birth-day"
-                  />
-                  <Dropdown 
-                    onChange = {this.selectBirthDay}
-                    placeholder='State'
-                    search selection options={this.state.month}
+                    onChange = {this.setBirthYear}
+                    placeholder='Year'
+                    search selection options={this.state.year}
                     className="birth-day"
                   />
                 </Form.Field>
                 <br />
+                <Form.Field  className="gender">
+                    <Checkbox
+                      radio
+                      value="male"
+                      label='male'
+                      checked={this.state.gender === 'male'}
+                      onChange={() => this.setState({ gender: 'male' })}
+                    />
+                    <Checkbox
+                      radio
+                      value="female"
+                      label='female'
+                      checked={this.state.gender === 'female'}
+                      onChange={() => this.setState({ gender: 'female' })}
+                    />
+                    <Checkbox
+                      radio
+                      value="non"
+                      label='non-binary'
+                      checked={this.state.gender === 'non'}
+                      onChange={() => this.setState({ gender: 'non' })}
+                    />
+                </Form.Field>
                 <Form.Field>
-                  <Checkbox
-                    checked={this.state.accepted}
-                    label={<label>{t('haveToRead')} <Link to='/terms'>{t('terms')}</Link></label>}
-                    onChange={() => this.setState({ accepted: !this.state.accepted })}
-                  />
+                  <p className="conditions">
+                    By clicking on Sign up, you agree to Casinoff's terms & conditions and privacy policy
+                  </p>
                 </Form.Field>
                 <Button disabled={!this.state.accepted} type='submit' color='green' className='fullwidth-button'>{t('common:form.createAccount')}</Button>
                 <div className='auth-footer text-center'>
