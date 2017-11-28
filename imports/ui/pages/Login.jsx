@@ -12,7 +12,7 @@ import SEO from '../components/Common/SEO'
 import store from '/lib/store'
 import ReactGA from 'react-ga'
 
-import { Header, Form, Button, Input, Icon } from 'semantic-ui-react'
+import { Header, Form, Button, Input, Icon, Label } from 'semantic-ui-react'
 
 class Login extends React.Component {
   constructor (props) {
@@ -138,11 +138,6 @@ class Login extends React.Component {
         <div className='outer-wrapper'>
           <div className='middle'>
             <div className='inner'>
-              <Header as='h1'>{t('header')}</Header>
-              <Header.Subheader>
-                {t('subheader')}
-              </Header.Subheader>
-
               <div className='social-login'>
                 <FacebookLogin
                   cssClass='facebook-login-button'
@@ -151,25 +146,8 @@ class Login extends React.Component {
                   scope='public_profile,email'
                   callback={() => this.responseFacebook()}
                   textButton=''
-                  icon={<span><Icon name='facebook' />Facebook</span>}
-                />
-                <GoogleLogin
-                  className='facebook-login-button'
-                  clientId='764374681772-7g6j36j51m960ufaop8hjj87pahrail6.apps.googleusercontent.com'
-                  buttonText={<span><Icon name='google' />Google</span>}
-                  onSuccess={() => this.responseGoogle()}
-                  onFailure={() => this.responseGoogle()}
-                />
-                <TwitterLogin
-                  className='facebook-login-button'
-                  text={<span><Icon name='twitter' />Twitter</span>}
-                  showIcon={false}
-                  requestTokenUrl='https://api.twitter.com/oauth/request_token'
-                  onFailure={() => this.responseTwitter()}
-                  onSuccess={() => this.responseTwitter()}
-                />
-                {/* <Button circular color='twitter' icon='twitter' />
-                <Button circular color='vk' icon='vk' /> */}
+                  icon={<span><Icon name='facebook f' />Login with Facebook</span>}
+                />                
               </div>
 
               <div className='text-separator'>
@@ -177,7 +155,9 @@ class Login extends React.Component {
               </div>
 
               <Form onSubmit={this.login}>
+                <h1>Log in using e-mail</h1>
                 <Form.Field>
+                  <Label content="E-mail" className="label"/>
                   <Input
                     icon='mail' iconPosition='left'
                     name='emailUsername'
@@ -189,6 +169,7 @@ class Login extends React.Component {
                   />
                 </Form.Field>
                 <Form.Field>
+                  <Label content="Password" className="label"/>
                   <Input
                     icon='lock' iconPosition='left'
                     name='password'

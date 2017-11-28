@@ -16,10 +16,38 @@
       width: 45.5%;
     }
     .facebook-login-button {
-      background: #4666A0;
+      background: #22589f;
+      width: 325px;
+      height: 100px;
+      border-radius: 7px;
+      span {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+          font-size: 35px;
+          border: 1px solid #ffffff;
+          padding: 25px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 15px;
+        }
+      }
     }
     .vk-login-button {
       background-color: #507299;
+    }
+  }
+  .ui.form .field {
+    .label {
+      float: left;
+      background: transparent;
+      font-size: 15px;
+      font-weight: normal;
+      margin-bottom: 15px;
+      padding: 0;
     }
   }
   .ui.form .field .ui.input input {
@@ -31,7 +59,9 @@
     margin-top: 1rem;
   }
   a {
-    font-weight: bold;
+    text-decoration: underline;
+    color: #708df5;
+    font-weight: 300;
   }
   .auth-footer {
     display: flex;
