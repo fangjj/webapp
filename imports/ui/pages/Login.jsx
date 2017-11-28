@@ -155,7 +155,7 @@ class Login extends React.Component {
               </div>
 
               <Form onSubmit={this.login}>
-                <h1>Log in using e-mail</h1>
+                <h3>Log in using e-mail</h3>
                 <Form.Field>
                   <Label content="E-mail" className="label"/>
                   <Input
