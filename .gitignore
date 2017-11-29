@@ -3,7 +3,6 @@
 .vscode
 .idea
 .deploy
-.meteor
 *.csv
 *.dat
 *.gz
@@ -54,7 +53,6 @@ imports/plugins/custom/*
 
 .ryfma/config.json
 
-settings-development.json
 settings-production.json
 fullchain.pem
 privkey.pem

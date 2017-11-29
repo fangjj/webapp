@@ -23,26 +23,24 @@ const Home = ({ t, staticContext, cookies }) => {
         path='/'
         contentType='website'
       />
-      {!authenticated &&
-        <div className='ui segment masthead'>
-          <div className='outer'>
-            <div className='middle'>
-              <div className='inner'>
-                <LeftSidebar />
-                <div className="main-content">
-                  <div className="start">
-                    <img className="img-start" src="./images/start.png" />
-                    <h2>Choose a number and win.<br/> As simple as that!</h2>
-                    <p className="start-description">Here, at Casinoff we believe that the game should be as easy, fair and simple as it could be. This is why we care about your experience and service provided to you throughout your visit. We are human beings, but more importantly enthusiasts, just like you. We believe that's necessary in order to understand and solve your needs as quickly and easily as possible.</p>
-                  </div>
-                  <img className="free" src="./images/free.png" />
+      <div className='ui segment masthead'>
+        <div className='outer'>
+          <div className='middle'>
+            <div className='inner'>
+              <LeftSidebar />
+              <div className="main-content">
+                <div className="start">
+                  <img className="img-start" src="./images/start.png" />
+                  <h2>Choose a number and win.<br/> As simple as that!</h2>
+                  <p className="start-description">Here, at Casinoff we believe that the game should be as easy, fair and simple as it could be. This is why we care about your experience and service provided to you throughout your visit. We are human beings, but more importantly enthusiasts, just like you. We believe that's necessary in order to understand and solve your needs as quickly and easily as possible.</p>
                 </div>
+                <img className="free" src="./images/free.png" />
               </div>
-              <HomeComment/>
             </div>
+            <HomeComment/>
           </div>
         </div>
-      }
+      </div>
     </div>
   )
 }

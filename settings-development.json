@@ -1,0 +1,38 @@
+{
+  "public": {
+    "yandex": {
+      "id":""
+    },
+    "google": {
+      "id":""
+    }
+  },
+  "private": {
+    "MAIL_URL": "",
+    "OAuth": {
+      "vk": {
+        "appId": "",
+        "secret": "",
+        "loginStyle": "popup"
+      },
+      "facebook": {
+        "appId": "",
+        "secret": "",
+        "loginStyle": "popup"
+      },
+      "google": {
+        "clientId": "",
+        "secret": "",
+        "loginStyle": "popup"
+      }
+    },
+    "yandex": {
+      "notificationSecret": ""
+    }
+  },
+  "AWSAccessKeyId": "",
+  "AWSSecretAccessKey": "",
+  "AWSBucket": "cdn",
+  "AWSRegion": "us-east-1",
+  "OPTICS_API_KEY": ""
+}
