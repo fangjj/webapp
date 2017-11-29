@@ -13,7 +13,7 @@
 }
 
 #home {
-  margin-top: -4rem;
+  height: 100%;
   .outer {
     display: table;
     position: absolute;
@@ -21,16 +21,46 @@
     width: 100%;
   }
   .middle {
-    display: table-cell;
+    // display: table-cell;
     vertical-align: middle;
     padding: 0;
+    height: 100%;
   }
   .inner {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     display: flex;
-    align-items: center;
+    .main-content {
+      background: #0e0e0e;
+      width: calc(100% - 280px);
+      .start {
+        text-align: center;
+        color: #ffffff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .img-start {
+          width: 80%;
+          max-width: 900px;
+        }
+        .start-description {
+          width: 50%;
+          margin-top: 30px;
+          font-size: 12px;
+          max-width: 500px;
+        }
+      }
+      .free {
+        width: 25%;
+        position: absolute;
+        bottom: 220px;
+        max-width: 300px;
+        right: 0;
+      }
+    }
   }
   .information {
     margin: 0;
@@ -118,9 +148,13 @@
   }
 }
 
+.footer {
+  background: #0a0a0a !important;
+}
+
 .masthead.segment {
   min-height: 540px;
-  height: 101vh;
+  height: 100%;
   padding: 0em;
   overflow: hidden;
   margin: 0em;

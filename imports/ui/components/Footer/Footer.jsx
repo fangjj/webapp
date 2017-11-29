@@ -7,20 +7,36 @@ const Footer = ({ t, isMobile }) => (
   <div className={isMobile ? 'ui segment inverted footer mobile-footer' : 'ui segment inverted footer'}>
     <Grid className='page' textAlign='center'>
       <Grid.Row className='pages-links'>
-        <Grid.Column width={3}>
+        <Grid.Column width={2}>
           <List link inverted>
-            <List.Item className='header'>{t('common:footer.header1')}</List.Item>
+            <List.Item><Link to='/'>{t('common:footer.home')}</Link></List.Item>
             <List.Item><Link to='/'>{t('common:footer.aboutUs')}</Link></List.Item>
+            <List.Item><Link to='/'>{t('common:footer.play')}</Link></List.Item>
+          </List>
+        </Grid.Column>
+        <Grid.Column width={2}>
+          <List link inverted>
+            <List.Item><Link to='/'>{t('common:footer.faq')}</Link></List.Item>
+            <List.Item><a href='mailto:info@ryfma.ru'>{t('common:footer.casinoGame')}</a></List.Item>
+            <List.Item><Link to='/adv'>{t('common:footer.blog')}</Link></List.Item>
           </List>
         </Grid.Column>
         <Grid.Column width={3}>
           <List link inverted>
-            <List.Item className='header'>{t('common:footer.header3')}</List.Item>
-            <List.Item><a href='mailto:info@ryfma.ru'>{t('common:footer.contact')}</a></List.Item>
+            <List.Item><Link to='/'>{t('common:footer.workatCasino')}</Link></List.Item>
+            <List.Item><a href='mailto:info@ryfma.ru'>{t('common:footer.affiliates')}</a></List.Item>
+            <List.Item><Link to='/adv'>{t('common:footer.privacy')}</Link></List.Item>
+          </List>
+        </Grid.Column>
+        <Grid.Column width={3}>
+          <List link inverted>
+            <List.Item ><Link to='/'>{t('common:footer.contact')}</Link></List.Item>
+            <List.Item><a href='mailto:info@ryfma.ru'>{t('common:footer.termsConditions')}</a></List.Item>
             {/* <List.Item><Link to='/adv'>Advertise</Link></List.Item> */}
           </List>
         </Grid.Column>
-        <Grid.Column width={3} className='mobile-app-download ios-app'>
+        <Grid.Column width={4}>
+          <Button>Contact support</Button>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row className='menu-copyright'>

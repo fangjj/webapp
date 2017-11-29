@@ -5,8 +5,7 @@
   padding: 2em 0!important;
   margin-bottom: 0!important;
   .ui.page.grid {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 0px;
   }
   .ui.grid > .row {
     &.pages-links {
@@ -39,12 +38,12 @@
     margin-bottom: 8px;
   }
   .button {
-    display: block;
-    width: 9rem;
-    border-radius: 500px;
-    margin: 0 auto;
-    .hidden {
-      display: block;
+    background: transparent;
+    border: 1px solid #AFAFAF;
+    color: #afafaf;
+    &:hover {
+      background: transparent;
+      color: #afafaf;
     }
   }
   .android-app {
@@ -57,7 +56,11 @@
     padding: 0 0.5em!important;
   }
   .menu-copyright {
-    border-top: 1px solid #444444;
+    border-top: 3px solid transparent;
+    -moz-border-image: -moz-linear-gradient(to right, #b71920, #b71920, #7c2d71, #543aa7, #2b48e0);
+    -webkit-border-image: -webkit-linear-gradient(to right, #b71920, #b71920, #7c2d71, #543aa7, #2b48e0);
+    border-image: linear-gradient(to left, #b71920, #b71920, #7c2d71, #543aa7, #2b48e0);
+    border-image-slice: 1;
     margin-top: 8px;
     padding-bottom: 0!important;
     font-size: 0.7rem;

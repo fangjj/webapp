@@ -12,7 +12,6 @@ import PublicHeader from './PublicHeader'
 import AuthHeader from './AuthHeader'
 import { logout } from '../Common/meteor-apollo-accounts'
 
-//import logo from '../../../../public/logo.png'
 class Header extends Component {
   componentDidMount () {
     const { cookies, authenticated } = this.props
@@ -90,7 +89,7 @@ class Header extends Component {
     const cookieAuth = !!cookies.get('meteor_login_token')
     const authCheck = (authenticated && cookieAuth) || (cookieAuth && this.props.location.search === '?refresh')
 
-    let headerClassName = 'top-header clearfix'
+    let headerClassName = 'top-header clearfix transparent'
     let menu = isTablet || isMobile ? <ul className='menu-list'>
       <li><Link to='/best'><Icon name='star' />Лучшее</Link></li>
     </ul>
@@ -103,10 +102,6 @@ class Header extends Component {
 
     if (isTablet) {
       headerClassName = 'top-header tablet-header clearfix'
-    }
-
-    if ((!authCheck && pathname === '/')) {
-      headerClassName = headerClassName + ' transparent'
     }
 
     return (
@@ -136,15 +131,7 @@ class Header extends Component {
         </Menu.Item>}
         <Menu.Item header className='header-block' itemProp='name'>
           <Link to='/' className='logo' itemProp='url'>
-            <LazyLoad height={60} once placeholder={<div className='ui avatar image img-placeholder' />}>
-              <img src='../../../../public/logo.png' alt='logo' />
-              <img src='../../../public/logo.png' alt='logo11' />
-              <img src='../public/logo.png' alt='logo2' />
-              <img src='../../public/logo.png' alt='logo3' />
-              <img src='../../../../../public/logo.png' alt='logo4' />
-              <img src='./public/logo.png' alt='logo4' />
-            </LazyLoad>
-            {!(isTablet || isMobile) && <span>MO.ST</span>}
+            <img src='./logo.png' alt='logo' />
           </Link>
         </Menu.Item>
         <Menu.Menu className='header-block' position='right'>

@@ -2,18 +2,18 @@
   height:100vh;
   .ui.container {
     min-height: 541px;
-    min-height: calc(100% - 205px);
+    height: calc(100% - 125px);
   }
 }
 .ryfma-inner-content {
   min-height: 540px;
-  min-height: calc(100% - 205px);
-  padding-bottom: 44px;
+  height: calc(100% - 125px);
+ // padding-bottom: 44px;
 }
 .inner-content {
   min-height: 540px;
-  min-height: calc(100% - 205px);
-  padding-bottom: 44px;
+  height: 100%;
+  position: relative;
 }
 .show-error {
   color: $warning;
