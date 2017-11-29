@@ -54,7 +54,13 @@
     "myProfile": "My profile",
     "settings": "Settings",
     "invites": "Invite friends",
-    "services": "Services"
+    "services": "Services",
+    "home": "Home",
+    "contactUs": "Contact US",
+    "partners": "Partners",
+    "login": "Login",
+    "register": "Register",
+    "aboutUs": "About US"
   },
   "footer": {
     "header1": "Company",

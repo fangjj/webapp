@@ -4,13 +4,15 @@ import { withCookies } from 'react-cookie'
 import { NavLink, Link, withRouter } from 'react-router-dom'
 import { Menu, Icon, Popup, Label } from 'semantic-ui-react'
 import LazyLoad from 'react-lazyload'
+import store from '/lib/store'
+import ReactGA from 'react-ga'
+
 import SearchInput from '../Search/SearchInput'
 import PublicHeader from './PublicHeader'
 import AuthHeader from './AuthHeader'
 import { logout } from '../Common/meteor-apollo-accounts'
-import store from '/lib/store'
-import ReactGA from 'react-ga'
 
+//import logo from '../../../../public/logo.png'
 class Header extends Component {
   componentDidMount () {
     const { cookies, authenticated } = this.props
@@ -119,22 +121,33 @@ class Header extends Component {
             hideOnScroll
           />
         </Menu.Item>
-        }
+        }        
+        {!isTablet && !isMobile && <Menu.Item name='best' itemProp='name'>
+          <NavLink className='top-menu-link' to='/home' itemProp='url'>{t('common:header.home')}</NavLink>
+        </Menu.Item>}
+        {!isTablet && !isMobile && <Menu.Item name='about' itemProp='name'>
+          <NavLink className='top-menu-link' to='/about' itemProp='url'>{t('common:header.aboutUs')}</NavLink>
+        </Menu.Item>}
+        {!isTablet && !isMobile && <Menu.Item name='bescontactt' itemProp='name'>
+          <NavLink className='top-menu-link' to='/contact' itemProp='url'>{t('common:header.contactUs')}</NavLink>
+        </Menu.Item>}
+        {!isTablet && !isMobile && <Menu.Item name='partner' itemProp='name'>
+          <NavLink className='top-menu-link' to='/partner' itemProp='url'>{t('common:header.partners')}</NavLink>
+        </Menu.Item>}
         <Menu.Item header className='header-block' itemProp='name'>
           <Link to='/' className='logo' itemProp='url'>
             <LazyLoad height={60} once placeholder={<div className='ui avatar image img-placeholder' />}>
-              <img src='https://cdnryfma.s3.amazonaws.com/defaults/icons/apple-touch-icon-60x60.png' alt='ryfma' />
+              <img src='../../../../public/logo.png' alt='logo' />
+              <img src='../../../public/logo.png' alt='logo11' />
+              <img src='../public/logo.png' alt='logo2' />
+              <img src='../../public/logo.png' alt='logo3' />
+              <img src='../../../../../public/logo.png' alt='logo4' />
+              <img src='./public/logo.png' alt='logo4' />
             </LazyLoad>
             {!(isTablet || isMobile) && <span>MO.ST</span>}
           </Link>
         </Menu.Item>
-        {!isTablet && !isMobile && <Menu.Item name='best' itemProp='name'>
-          <NavLink className='top-menu-link' to='/best' itemProp='url'>{t('common:header.best')}</NavLink>
-        </Menu.Item>}
         <Menu.Menu className='header-block' position='right'>
-          {!isMobile && <Menu.Item>
-            <SearchInput />
-          </Menu.Item>}
           {!isMobile && <Menu.Item position='right'>
             { authCheck ? <AuthHeader isTablet={isTablet} cookies={cookies} /> : <PublicHeader />}
           </Menu.Item>}
