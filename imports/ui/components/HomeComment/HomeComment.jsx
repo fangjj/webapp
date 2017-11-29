@@ -14,15 +14,15 @@ class HomeComment extends Component {
                 <div className="top">
                     <Grid className='page' textAlign='center'>
                         <Grid.Column width={5}>
-                            <img src="win.png"/>
+                            <img src="./images/win.png"/>
                             2,457
                         </Grid.Column>
                         <Grid.Column width={6}>
-                            <img src="money.png"/>
+                            <img src="./images/money.png"/>
                             212346
                         </Grid.Column>
                         <Grid.Column width={5}>
-                            <img src="play.png"/>
+                            <img src="./images/play.png"/>
                             147
                         </Grid.Column>  
                     </Grid>

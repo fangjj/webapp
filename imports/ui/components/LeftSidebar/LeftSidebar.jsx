@@ -13,7 +13,7 @@ class LeftSidebar extends Component {
             <div id="left-sidebar" className="left-sidebar">
                 <Link to='/' className='logo' itemProp='url'>
                     <LazyLoad height={60} once placeholder={<div className='ui avatar image img-placeholder' />}>
-                        <img src='./leftbar-logo.png' />
+                        <img src='./images/leftbar-logo.png' />
                     </LazyLoad>
                 </Link>
                 <ul>

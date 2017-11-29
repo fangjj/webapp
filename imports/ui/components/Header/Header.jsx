@@ -131,7 +131,7 @@ class Header extends Component {
         </Menu.Item>}
         <Menu.Item header className='header-block' itemProp='name'>
           <Link to='/' className='logo' itemProp='url'>
-            <img src='./logo.png' alt='logo' />
+            <img src='./images/logo.png' alt='logo' />
           </Link>
         </Menu.Item>
         <Menu.Menu className='header-block' position='right'>
