@@ -126,7 +126,7 @@ class Header extends Component {
           />
         </Menu.Item>
         }        
-        {!isTablet && !isMobile && <Menu.Item name='best' itemProp='name'>
+        {!isTablet && !isMobile && <Menu.Item name='home' itemProp='name'>
           <NavLink className='top-menu-link' to='/home' itemProp='url'>{t('common:header.home')}</NavLink>
         </Menu.Item>}
         {!isTablet && !isMobile && <Menu.Item name='about' itemProp='name'>

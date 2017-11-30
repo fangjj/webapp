@@ -18,6 +18,12 @@ class Modal extends React.Component {
     }
   }
 
+  componentWillMount() {
+    if(this.props.type = 'signup') {
+      this.setState({ showSignupFlag: true })
+    }
+  }
+
   showSignup = () => {
     this.setState({ showSignupFlag: !this.state.showSignupFlag })
   }

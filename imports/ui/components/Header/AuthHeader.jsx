@@ -63,12 +63,12 @@ class AuthNavigationComponent extends React.Component {
 
     return (
       <div>
-        {!isMobile && <Link to='/new-post' className='new-post-button button' onClick={() => this.startWritingNewPost}>
+        {/* {!isMobile && <Link to='/new-post' className='new-post-button button' onClick={() => this.startWritingNewPost}>
           {isTablet
             ? <Icon name='pencil' />
             : t('common:header.newPost')
           }
-        </Link>}
+        </Link>} */}
         {/* <Link className='messages-menu' to='/messages'><Icon size='large' name='chat' /></Link> */}
         {!isMobile && <Dropdown
           className='notif-topmenu'

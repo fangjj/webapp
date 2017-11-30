@@ -15,19 +15,61 @@ class HomeComment extends Component {
                     <Grid className='page' textAlign='center'>
                         <Grid.Column width={5}>
                             <img src="./images/win.png"/>
-                            2,457
+                            <div className="bet-detail">
+                                <p className="number">2,457</p>
+                                <p className="people">People became happier today</p>
+                            </div>
                         </Grid.Column>
                         <Grid.Column width={6}>
                             <img src="./images/money.png"/>
-                            212346
+                            <div className="bet-detail">
+                                <p className="number">2,457</p>
+                                <p className="people">Money bet in total</p>
+                            </div>
                         </Grid.Column>
                         <Grid.Column width={5}>
                             <img src="./images/play.png"/>
-                            147
+                            <div className="bet-detail">
+                                <p className="number">1,487</p>
+                                <p className="people">playing right now</p>
+                            </div>
                         </Grid.Column>  
                     </Grid>
                 </div>
                 <div className="bottom">
+                    <Grid>
+                        <Grid.Column width={8} className="left">
+                            <img src="./images/hart.png"/>
+                            <div className="bet-detail">
+                                <p className="number">We want nothing from you!</p>
+                                <p className="people">
+                                    Casinoff is a fully non-profit project. Yes, the project is completely charitable and is directed on drawing attention to gambling and the social problems associated with it.
+                                    The money received, in full, is completely used for supporting charitable funds and platforms to help people with addiction to gambling.
+                                    You can even claim the money back through National Gambling association, unless you want to help society with resolving one of the major issues.
+                                </p>
+                                <Button>learn more about this</Button>
+                            </div>
+                            
+                        </Grid.Column>
+                        <Grid.Column width={8} className="right">
+                            <img src="./images/computer.png"/>
+                            <div className="bet-detail">
+                                <p className="number">
+                                    Use Casinoff games on mobile, tablet, Mac or PC.
+                                </p>
+                                <ul>
+                                    <li><Icon name="checkmark" />100% secure payments</li>
+                                    <li><Icon name="checkmark" />Fast withdrawals without hassle</li>
+                                    <li><Icon name="checkmark" />Fast multilingual support</li>
+                                    <li><Icon name="checkmark" />New promotions each week</li>
+                                </ul>
+                            </div>
+                            <div className="card" >
+                                <img src="./images/card.png"/>
+                                <a>All payment methods</a>
+                            </div>
+                        </Grid.Column>
+                    </Grid>
                 </div>
                 
             </div>
