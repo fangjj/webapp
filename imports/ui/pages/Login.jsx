@@ -41,6 +41,10 @@ class Login extends React.Component {
     this.props.client.resetStore()
   }
 
+  showSignUp = () => {
+    console.log(12)
+  }
+
   // Password Auth
   async login (event) {
     event.preventDefault()
@@ -135,61 +139,57 @@ class Login extends React.Component {
           path='/login'
           contentType='product'
         />
-        <div className='outer-wrapper'>
-          <div className='middle'>
-            <div className='inner'>
-              <div className='social-login'>
-                <FacebookLogin
-                  cssClass='facebook-login-button'
-                  appId='1127643753917982'
-                  fields='name,email,picture'
-                  scope='public_profile,email'
-                  callback={() => this.responseFacebook()}
-                  textButton=''
-                  icon={<span><Icon name='facebook f' />Login with Facebook</span>}
-                />                
-              </div>
-
-              <div className='text-separator'>
-                <span className='label'>{t('common:or')}</span>
-              </div>
-
-              <Form onSubmit={this.login}>
-                <h3>Log in using e-mail</h3>
-                <Form.Field>
-                  <Label content="E-mail" className="label"/>
-                  <Input
-                    icon='mail' iconPosition='left'
-                    name='emailUsername'
-                    placeholder={t('common:form.emailUsername')}
-                    type='text'
-                    required='true'
-                    value={this.state.emailUsername}
-                    onChange={(event) => this.setState({ emailUsername: event.target.value })}
-                  />
-                </Form.Field>
-                <Form.Field>
-                  <Label content="Password" className="label"/>
-                  <Input
-                    icon='lock' iconPosition='left'
-                    name='password'
-                    placeholder={t('common:form.password')}
-                    type='password'
-                    required='true'
-                    value={this.state.password}
-                    onChange={(event) => this.setState({ password: event.target.value })}
-                  />
-                </Form.Field>
-                <Button type='submit' color='green' className='fullwidth-button'>{t('common:form.signIn')}</Button>
-                <div className='auth-footer'>
-                  <div>
-                    <Link to='/recover-password'>{t('common:form.forgotPassword')}</Link>
-                  </div>
-                  <div>{t('common:form.noAccount')} <Link to='/register'>{t('common:form.signUp')}</Link></div>
-                </div>
-              </Form>
-            </div>
+        <div className='inner'>
+          <div className='social-login'>
+            <FacebookLogin
+              cssClass='facebook-login-button'
+              appId='1127643753917982'
+              fields='name,email,picture'
+              scope='public_profile,email'
+              callback={() => this.responseFacebook()}
+              textButton=''
+              icon={<span><Icon name='facebook f' />Login with Facebook</span>}
+            />                
           </div>
+
+          <div className='text-separator'>
+            <span className='label'>{t('common:or')}</span>
+          </div>
+
+          <Form onSubmit={this.login}>
+            <h3>Log in using e-mail</h3>
+            <Form.Field>
+              <Label content="E-mail" className="label"/>
+              <Input
+                icon='mail' iconPosition='left'
+                name='emailUsername'
+                placeholder={t('common:form.emailUsername')}
+                type='text'
+                required='true'
+                value={this.state.emailUsername}
+                onChange={(event) => this.setState({ emailUsername: event.target.value })}
+              />
+            </Form.Field>
+            <Form.Field>
+              <Label content="Password" className="label"/>
+              <Input
+                icon='lock' iconPosition='left'
+                name='password'
+                placeholder={t('common:form.password')}
+                type='password'
+                required='true'
+                value={this.state.password}
+                onChange={(event) => this.setState({ password: event.target.value })}
+              />
+            </Form.Field>
+            <Button type='submit' color='green' className='fullwidth-button'>{t('common:form.signIn')}</Button>
+            </Form>
+            <div className='auth-footer'>
+              <div>
+                <Link to='/recover-password'>{t('common:form.forgotPassword')}</Link>
+              </div>
+              <div>{t('common:form.noAccount')} <Button onClick={() => this.showSignUp()}>{t('common:form.signUp')}</Button></div>
+            </div>
         </div>
       </div>
     )

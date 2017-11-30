@@ -13,6 +13,15 @@ import AuthHeader from './AuthHeader'
 import { logout } from '../Common/meteor-apollo-accounts'
 
 class Header extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      isOpen: false
+    }
+  }
+
   componentDidMount () {
     const { cookies, authenticated } = this.props
     const cookieAuth = !!cookies.get('meteor_login_token')
@@ -136,7 +145,7 @@ class Header extends Component {
         </Menu.Item>
         <Menu.Menu className='header-block' position='right'>
           {!isMobile && <Menu.Item position='right'>
-            { authCheck ? <AuthHeader isTablet={isTablet} cookies={cookies} /> : <PublicHeader />}
+            { authCheck ? <AuthHeader isTablet={isTablet} cookies={cookies} /> : <PublicHeader t={this.props.t}/>}
           </Menu.Item>}
         </Menu.Menu>
       </Menu>
