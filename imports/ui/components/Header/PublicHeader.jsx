@@ -33,7 +33,7 @@ class PublicHeader extends Component {
     const { t } = this.props
 
     return(
-      <div>
+      <div className="btn-auth">
         <Button className='login-button' onClick={() => this.toogleModal()} ><Icon name="sign in"/>{t('common:form.login')}</Button>
         <Button className='signup-button' onClick={() => this.signup()} ><Icon name="lock" />{t('common:form.signUp')}</Button>
         <Modal
