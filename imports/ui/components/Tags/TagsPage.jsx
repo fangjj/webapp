@@ -14,8 +14,8 @@ class TagsPage extends React.Component {
       <Container>
         <SEO
           schema='ItemList'
-          title={'Most recent posts tagged by ' + this.props.match.params.tagName}
-          description={'Most recent posts tagged by ' + this.props.match.params.tagName}
+          title={'Casinoff recent posts tagged by ' + this.props.match.params.tagName}
+          description={'Casinoff recent posts tagged by ' + this.props.match.params.tagName}
           path={`tags/${this.props.match.params.tagId}/${this.props.match.params.tagName}`}
           contentType='website'
           tags={this.props.match.params.tagName}

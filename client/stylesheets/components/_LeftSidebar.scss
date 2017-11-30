@@ -26,15 +26,50 @@
                 margin: 0 auto;
                 padding: 30px;
                 font-family: 'DIN_Light';
-                P {
-                    color: red;
+                .item-1 {
+                    color: #ffffff;
                     background: #0e0e0e;
                     padding: 10px;
                     border-radius: 50%;
-                    border: 2px solid #000000;
+                    border: 2px solid #ffffff;
                     margin: 0;
                     margin-right: 15px;
                     font-size: 20px;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .item-4 {
+                    color: #176bb2;
+                    background: #0e0e0e;
+                    padding: 10px;
+                    border-radius: 50%;
+                    border: 2px solid #176bb2;
+                    margin: 0;
+                    margin-right: 15px;
+                    font-size: 20px;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .item-10 {
+                    color: #a96905;
+                    background: #0e0e0e;
+                    padding: 5px;
+                    border-radius: 50%;
+                    border: 2px solid #a96905;
+                    margin: 0;
+                    margin-right: 15px;
+                    font-size: 20px;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
                 .item-description {
                     text-align: left;
@@ -43,7 +78,7 @@
             .btn-more {
                 background: #1b1b1b;
                 border: 1px solid #484848;
-                color: #ffffff;
+                color: #626262;
             }
         }       
     }    

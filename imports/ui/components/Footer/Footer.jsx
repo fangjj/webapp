@@ -35,7 +35,7 @@ const Footer = ({ t, isMobile }) => (
           </List>
         </Grid.Column>
         <Grid.Column width={4} className="flag-section">
-          <Button>Contact support</Button>
+          <Button><img src="./images/contact.png" /></Button>
           <img src="./images/russia.png" />
           <img src="./images/japan.png" />
           <img src="./images/france.png" />
@@ -57,7 +57,7 @@ const Footer = ({ t, isMobile }) => (
       </Grid.Row>
       <Grid.Row className='menu-copyright'>
         <Grid.Column width={4} className='copyright' textAlign='left'>
-          <img src="./images/logo.png"/>
+          <img src="./images/footer-logo.png"/>
         </Grid.Column>
         <Grid.Column width={12} textAlign='right'>
           <p>

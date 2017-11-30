@@ -19,7 +19,7 @@ class LeftSidebar extends Component {
                 <ul>
                     <li>
                         <div className="item">
-                            <p>1/2</p>
+                            <p className="item-1">1/2</p>
                             <div className="item-description">
                                 <u>wallsie44</u> just won £8 in a choice of 2 numbers, awesome!
                             </div>
@@ -27,7 +27,7 @@ class LeftSidebar extends Component {
                     </li>
                     <li>
                         <div className="item">
-                            <p>1/2</p>
+                            <p className="item-4">1/4</p>
                             <div className="item-description">
                                 <u>wallsie44</u> just won £8 in a choice of 2 numbers, awesome!
                             </div>
@@ -35,7 +35,7 @@ class LeftSidebar extends Component {
                     </li>
                     <li>
                         <div className="item">
-                            <p>1/2</p>
+                            <p className="item-1">1/2</p>
                             <div className="item-description">
                                 <u>wallsie44</u> just won £8 in a choice of 2 numbers, awesome!
                             </div>
@@ -43,7 +43,7 @@ class LeftSidebar extends Component {
                     </li>
                     <li>
                         <div className="item">
-                            <p>1/2</p>
+                            <p className="item-10">1/10</p>
                             <div className="item-description">
                                 <u>wallsie44</u> just won £8 in a choice of 2 numbers, awesome!
                             </div>
@@ -51,7 +51,7 @@ class LeftSidebar extends Component {
                     </li>
                     <li>
                         <div className="item">
-                            <p>1/2</p>
+                            <p className="item-10">1/10</p>
                             <div className="item-description">
                                 <u>wallsie44</u> just won £8 in a choice of 2 numbers, awesome!
                             </div>
