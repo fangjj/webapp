@@ -35,7 +35,7 @@ class PublicHeader extends Component {
     return(
       <div>
         <Button className='login-button' onClick={() => this.toogleModal()} ><Icon name="sign in"/>{t('common:form.login')}</Button>
-        <Button className='login-button' onClick={() => this.signup()} ><Icon name="lock" />{t('common:form.signUp')}</Button>
+        <Button className='signup-button' onClick={() => this.signup()} ><Icon name="lock" />{t('common:form.signUp')}</Button>
         <Modal
           show={this.state.isOpen}
           onClose={this.toogleModal}

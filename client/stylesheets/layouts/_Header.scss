@@ -9,7 +9,7 @@
     &.transparent {
       background-color: #0a0a0a;
       border-bottom: none;
-      height: 120px;
+      height: 100px;
       width: 100%;
       padding: 0;
       margin: 0;
@@ -26,6 +26,7 @@
           img {
             border-radius: 0;
             margin: 0;
+            width: 90%;
           }
         }
       }
@@ -64,6 +65,12 @@
       .login-button {
         background-color: transparent;
         color: $white;
+      }
+      .signup-button {
+        background: #214bee;
+        border-radius: 0 !important;
+        color: #ffffff;
+        margin: 0;
       }
     }
   }
@@ -111,6 +118,18 @@
         &:hover, &:active, &:focus {
           color: $danger!important;
         }
+      }
+    }
+  }
+
+  .right.menu {
+    .right.item {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      div {
+        height: 100%;
+        display: flex;
       }
     }
   }
