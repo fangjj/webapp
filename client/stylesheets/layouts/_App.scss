@@ -385,21 +385,21 @@ img {
   background-color: $gray-light!important;
 }
 
-.outer-wrapper {
-  display: table;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  .middle {
-      display: table-cell;
-      vertical-align: middle;
-  }
-  .inner {
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
-  }
-}
+// .outer-wrapper {
+//   display: table;
+//   position: absolute;
+//   height: 100%;
+//   width: 100%;
+//   .middle {
+//       display: table-cell;
+//       vertical-align: middle;
+//   }
+//   .inner {
+//       margin-left: auto;
+//       margin-right: auto;
+//       width: 100%;
+//   }
+// }
 
 .slide-down-button {
   padding: 0.3em;

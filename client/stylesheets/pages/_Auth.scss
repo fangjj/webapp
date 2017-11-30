@@ -1,9 +1,4 @@
 .auth-page {
-  text-align: center;
-  max-width: 380px;
-  margin: 0 auto;
-  height: 100vh;
-  position: relative;
   .social-login {
     margin-top: 1.5rem;
     button {
@@ -97,9 +92,6 @@
     &.text-center {
       text-align: center;
       display: block;
-    }
-    div {
-      padding: 0 1rem;
     }
   }
 }

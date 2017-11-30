@@ -63,7 +63,7 @@ class RecoverPassword extends React.Component {
 
   render () {
     const { token } = this.props.match.params
-    const { t } = this.props
+    const { t, showLogin } = this.props
     return token
       ? (
         <div className='auth-page'>
@@ -122,10 +122,8 @@ class RecoverPassword extends React.Component {
           <div className='outer-wrapper'>
             <div className='middle'>
               <div className='inner'>
-                <Header as='h1'>{t('headerRecover')}</Header>
-                <Header.Subheader>
-                  {t('subheaderRecover')}
-                </Header.Subheader>
+                <h3>{t('headerRecover')}</h3>
+                <p>{t('subheaderRecover')}</p>
                 <br />
                 <Form onSubmit={this.forgot}>
                   <Form.Field>
@@ -140,10 +138,10 @@ class RecoverPassword extends React.Component {
                     />
                   </Form.Field>
                   <Button type='submit' color='green' className='fullwidth-button'>{t('common:form.sendInstructions')}</Button>
-                  <div className='auth-footer text-center'>
-                    <div>{t('common:form.rememberPassword')} <Link to='/login'>{t('common:form.signIn')}</Link></div>
-                  </div>
                 </Form>
+                <div className='auth-footer text-center'>
+                  <div>{t('common:form.rememberPassword')} <u onClick={showLogin}>{t('common:form.signIn')}</u></div>
+                </div>
               </div>
             </div>
           </div>

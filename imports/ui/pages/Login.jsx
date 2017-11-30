@@ -12,15 +12,22 @@ import SEO from '../components/Common/SEO'
 import store from '/lib/store'
 import ReactGA from 'react-ga'
 
-import { Header, Form, Button, Input, Icon, Label } from 'semantic-ui-react'
+import { Header, Form, Button, Input, Icon, Label, Checkbox } from 'semantic-ui-react'
 
 class Login extends React.Component {
+
+  static propTypes = {
+    showSignup: PropTypes.func.isRequired
+  }
+
   constructor (props) {
     super(props)
     this.state = {
       emailUsername: '',
-      password: ''
+      password: '',
+      remember: false
     }
+
     this.login = this.login.bind(this)
     this.loginFacebook = this.loginFacebook.bind(this)
     this.loginGoogle = this.loginGoogle.bind(this)
@@ -39,10 +46,6 @@ class Login extends React.Component {
     this.props.cookies.set('meteor_login_token', store.getItem('Meteor.loginToken'), { path: '/' })
     this.props.history.push('/?refresh')
     this.props.client.resetStore()
-  }
-
-  showSignUp = () => {
-    console.log(12)
   }
 
   // Password Auth
@@ -129,7 +132,7 @@ class Login extends React.Component {
   }
 
   render () {
-    const { t } = this.props
+    const { t, showSignup, showForgotPassword } = this.props
     return (
       <div className='auth-page'>
         <SEO
@@ -182,14 +185,21 @@ class Login extends React.Component {
                 onChange={(event) => this.setState({ password: event.target.value })}
               />
             </Form.Field>
+            <Form.Field>
+              <Checkbox
+                value="remember"
+                label='Remember me'
+                onChange={() => this.setState({ remember: !this.state.remember })}
+              />
+            </Form.Field>
             <Button type='submit' color='green' className='fullwidth-button'>{t('common:form.signIn')}</Button>
-            </Form>
-            <div className='auth-footer'>
-              <div>
-                <Link to='/recover-password'>{t('common:form.forgotPassword')}</Link>
-              </div>
-              <div>{t('common:form.noAccount')} <Button onClick={() => this.showSignUp()}>{t('common:form.signUp')}</Button></div>
+          </Form>
+          <div className='auth-footer'>
+            <div>
+              <u onClick={showForgotPassword}>{t('common:form.forgotPassword')}</u>
             </div>
+            <div>{t('common:form.noAccount')} <u onClick={showSignup}>{t('common:form.signUp')}</u></div>
+          </div>
         </div>
       </div>
     )

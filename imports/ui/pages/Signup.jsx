@@ -171,8 +171,8 @@ class Signup extends React.Component {
   }
 
   render () {
-    const { t } = this.props
-    console.log(this.state.gender)
+    const { t, showLogin } = this.props
+
     return (
       <div className='auth-page'>
         <SEO
@@ -219,7 +219,7 @@ class Signup extends React.Component {
                   <Label content="Confirm E-mail" className="label"/>
                   <Input
                     icon='mail' iconPosition='left'
-                    name='cemail'
+                    name='email'
                     placeholder={t('common:form.email')}
                     type='email'
                     required='true'
@@ -301,10 +301,10 @@ class Signup extends React.Component {
                   </p>
                 </Form.Field>
                 <Button disabled={!this.state.accepted} type='submit' color='green' className='fullwidth-button'>{t('common:form.createAccount')}</Button>
-                <div className='auth-footer text-center'>
-                  <div>{t('alreadyAMember')} <Link to='/login'>{t('common:form.signIn')}</Link></div>
-                </div>
               </Form>
+              <div className='auth-footer text-center'>
+                <div>{t('alreadyAMember')} <u onClick={showLogin} color="green">{t('common:form.signIn')}</u></div>
+              </div>
             </div>
           </div>
         </div>
