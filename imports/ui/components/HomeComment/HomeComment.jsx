@@ -14,21 +14,21 @@ class HomeComment extends Component {
         <div className="top">
           <Grid className="page" textAlign="center">
             <Grid.Column width={5}>
-              <img src="./images/win.png" alt="win" />
+              <img src="./images/win.png" alt="win" className="win" />
               <div className="bet-detail">
                 <p className="number">2,457</p>
                 <p className="people">People became happier today</p>
               </div>
             </Grid.Column>
             <Grid.Column width={6}>
-              <img src="./images/money.png" alt="money" />
+              <img src="./images/money.png" alt="money" className="money" />
               <div className="bet-detail">
-                <p className="number">2,457</p>
+                <p className="number">2,457,856</p>
                 <p className="people">Money bet in total</p>
               </div>
             </Grid.Column>
             <Grid.Column width={5}>
-              <img src="./images/play.png" alt="play" />
+              <img src="./images/play.png" alt="play" className="play" />
               <div className="bet-detail">
                 <p className="number">1,487</p>
                 <p className="people">playing right now</p>

@@ -3,7 +3,7 @@ import { BrowserPolicy } from 'meteor/browser-policy-common'
 // Fonts
 BrowserPolicy.content.allowFontOrigin('fonts.googleapis.com')
 BrowserPolicy.content.allowFontOrigin('fonts.gstatic.com')
-BrowserPolicy.content.allowFontOrigin('data:')
+// BrowserPolicy.content.allowFontOrigin('data:')
 
 // Scripts
 BrowserPolicy.content.allowScriptOrigin('*.jsdelivr.net')
