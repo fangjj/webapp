@@ -62,8 +62,8 @@ const Footer = ({ t, isMobile }) => (
         <Grid.Column width={12} textAlign='right'>
           <p>
             CASINOFF is a company incorporated under the Laws of United Kingdom and Wales with company registration no. C55663, and having its registered address at ‘The Unicorn Centre, Triq l-Uqija, Swieqi, SWQ 2335, London'. <br/><br/>
-            Casinoff is licensed and regulated in the United Kingdom. This website provides facilities for gambling to persons in Great Britain in reliance to Gambling Commission Licence Number 000-039265-R-319417-009. Find out more about the UKGC on www.gamblingcommission.gov.uk <br/><br/>
-            Games provided by IGT (Alderney 4) Limited and by Jadestone Networks (Malta) Limited are licensed and regulated by the Alderney Gambling Control Commission (AGCC). You may always contact us on hey@casumo.com.
+            Casinoff is licensed and regulated in the United Kingdom. This website provides facilities for gambling to persons in Great Britain in reliance to Gambling Commission Licence Number 000-039265-R-319417-009. Find out more about the UKGC on <a href="http://www.gamblingcommission.gov.uk" target="_blank">www.gamblingcommission.gov.uk</a> <br/><br/>
+            Games provided by IGT (Alderney 4) Limited and by Jadestone Networks (Malta) Limited are licensed and regulated by the Alderney Gambling Control Commission (AGCC). You may always contact us on <a href="#">hey@casumo.com</a>.
           </p>
         </Grid.Column>
       </Grid.Row>
