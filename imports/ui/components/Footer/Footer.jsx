@@ -36,11 +36,11 @@ const Footer = ({ t, isMobile }) => (
         </Grid.Column>
         <Grid.Column width={4} className="flag-section">
           <Button><img src="./images/contact.png" /></Button>
-          <img src="./images/russia.png" />
-          <img src="./images/japan.png" />
-          <img src="./images/france.png" />
-          <img src="./images/turkey.png" />
-          <img src="./images/uk.png" />
+          <img src="./images/russia.png" className="image-padding"/>
+          <img src="./images/japan.png" className="image-padding"/>
+          <img src="./images/france.png" className="image-padding"/>
+          <img src="./images/turkey.png" className="image-padding"/>
+          <img src="./images/uk.png" className="image-padding"/>
         </Grid.Column>
       </Grid.Row>
       <Grid.Row textAlign='center' className="social-section">
@@ -61,8 +61,8 @@ const Footer = ({ t, isMobile }) => (
         </Grid.Column>
         <Grid.Column width={12} textAlign='right'>
           <p>
-            CASINOFF is a company incorporated under the Laws of United Kingdom and Wales with company registration no. C55663, and having its registered address at ‘The Unicorn Centre, Triq l-Uqija, Swieqi, SWQ 2335, London'. <br/>
-            Casinoff is licensed and regulated in the United Kingdom. This website provides facilities for gambling to persons in Great Britain in reliance to Gambling Commission Licence Number 000-039265-R-319417-009. Find out more about the UKGC on www.gamblingcommission.gov.uk <br/>
+            CASINOFF is a company incorporated under the Laws of United Kingdom and Wales with company registration no. C55663, and having its registered address at ‘The Unicorn Centre, Triq l-Uqija, Swieqi, SWQ 2335, London'. <br/><br/>
+            Casinoff is licensed and regulated in the United Kingdom. This website provides facilities for gambling to persons in Great Britain in reliance to Gambling Commission Licence Number 000-039265-R-319417-009. Find out more about the UKGC on www.gamblingcommission.gov.uk <br/><br/>
             Games provided by IGT (Alderney 4) Limited and by Jadestone Networks (Malta) Limited are licensed and regulated by the Alderney Gambling Control Commission (AGCC). You may always contact us on hey@casumo.com.
           </p>
         </Grid.Column>
