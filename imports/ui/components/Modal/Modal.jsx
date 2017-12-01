@@ -17,6 +17,9 @@ class Modal extends React.Component {
       showForgotPasswordFlag: false
     };
     this.onClose = this.onClose.bind(this);
+    this.showSignup = this.showSignup.bind(this);
+    this.showForgotPassword = this.showForgotPassword.bind(this);
+    this.hideForgotPassword = this.hideForgotPassword.bind(this);
   }
 
   showSignup() {
@@ -82,8 +85,6 @@ class Modal extends React.Component {
 
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
-  show: PropTypes.bool,
-  children: PropTypes.node
 };
 
 export default translate()(Modal);

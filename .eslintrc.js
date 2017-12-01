@@ -46,6 +46,7 @@ module.exports = {
       "no-restricted-globals": ["off"],
       "arrow-body-style": ["off"],
       "no-lonely-if": ["off"],
-      "prefer-arrow-callback": ["off"]
+      "prefer-arrow-callback": ["off"],
+      "no-nested-ternary": ["off"]
     }
 };
