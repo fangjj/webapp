@@ -1,21 +1,22 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import { Meteor } from 'meteor/meteor'
-import store from '/lib/store'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { Meteor } from 'meteor/meteor';
+import store from '../../../../lib/store';
 
 const seoImages = {
   openGraph: 'open-graph-social.jpg',
   twitter: 'open-graph-social.jpg',
   google: 'open-graph-social.jpg'
-}
+};
 
-const seoImageURL = file => `https://cdnryfma.s3.amazonaws.com/defaults/icons/${file}`
-const seoURL = path => Meteor.absoluteUrl(path)
+const seoImageURL = file => `https://cdnryfma.s3.amazonaws.com/defaults/icons/${file}`;
+const seoURL = path => Meteor.absoluteUrl(path);
 
 const getMetaTags = ({
   title, description, image, url, contentType, published, updated, category, tags, twitter, author, ISBN, year, first_name, last_name, username, gender
 }) => {
-  const desc = description ? description.replace(/<p>/g, '').replace(/<\/p>/g, '').replace(/<br(\s)?\/>/g, '').replace(/\\n/g, '').substring(0, 289) : first_name + ' ' + last_name
+  const desc = description ? description.replace(/<p>/g, '').replace(/<\/p>/g, '').replace(/<br(\s)?\/>/g, '').replace(/\\n/g, '')
+.substring(0, 289) : `${first_name} ${last_name}`;
   const metaTags = [
     { itemProp: 'name', content: title },
     { itemProp: 'description', content: desc },
@@ -36,21 +37,21 @@ const getMetaTags = ({
     { name: 'og:description', content: desc },
     { name: 'og:site_name', content: 'Casinoff' },
     { name: 'fb:app_id', content: '1127643753917982' }
-  ]
+  ];
 
   if (contentType === 'article') {
-    if (published) metaTags.push({ name: 'article:published_time', content: published })
-    if (updated) metaTags.push({ name: 'article:modified_time', content: updated })
-    if (category) metaTags.push({ name: 'article:section', content: category })
+    if (published) metaTags.push({ name: 'article:published_time', content: published });
+    if (updated) metaTags.push({ name: 'article:modified_time', content: updated });
+    if (category) metaTags.push({ name: 'article:section', content: category });
   } else if (contentType === 'profile') {
-    if (first_name) metaTags.push({ name: 'profile:first_name', content: first_name })
-    if (last_name) metaTags.push({ name: 'profile:last_name', content: last_name })
-    if (username) metaTags.push({ name: 'profile:username', content: username })
-    if (gender) metaTags.push({ name: 'profile:gender', content: gender })
+    if (first_name) metaTags.push({ name: 'profile:first_name', content: first_name });
+    if (last_name) metaTags.push({ name: 'profile:last_name', content: last_name });
+    if (username) metaTags.push({ name: 'profile:username', content: username });
+    if (gender) metaTags.push({ name: 'profile:gender', content: gender });
   }
 
-  return metaTags
-}
+  return metaTags;
+};
 
 const SEO = ({
   schema, title, description, image, path, contentType, published, updated, category, tags, twitter, author, ISBN, year, first_name, last_name, username, gender
@@ -85,6 +86,6 @@ const SEO = ({
       gender
     })}
   />
-)
+);
 
-export default SEO
+export default SEO;

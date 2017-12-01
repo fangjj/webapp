@@ -34,6 +34,9 @@
         color: #ffffff;
         font-family: 'DIN_Light';
       }
+      .item > .alignValue {
+        margin-left: 10px;
+      }
       .readability-mode, .language-toggle, .notif-topmenu {
         border: none;
         color: $white;
