@@ -7,10 +7,9 @@
     font-family: 'DIN_Medium';
     src: url('/fonts/DIN Medium Regular.ttf') format('truetype');
 }
-
 @font-face {
     font-family: 'DIN_Light_Regular';
-    src: url('/fonts/DIN Light Regular.otf');
+    src: url('/fonts/DIN Light Regular.otf') format('opentype');
 }
 @import "common/colors";
 @import "common/variables";
