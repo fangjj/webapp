@@ -3,14 +3,12 @@ import { translate } from 'react-i18next';
 import { withApollo } from 'react-apollo';
 import { Link, withRouter } from 'react-router-dom';
 import { Header, Form, Button, Checkbox, Input, Icon, Label, Dropdown } from 'semantic-ui-react';
+import FacebookLogin from 'react-facebook-login';
+import ReactGA from 'react-ga';
 import {Notification} from '../components/Notification/Notification';
 import { createUser, loginWithFacebook, loginWithGoogle, loginWithVK } from '../components/Common/meteor-apollo-accounts';
-import FacebookLogin from 'react-facebook-login';
-import VKLogin from '../components/Common/react-vk-login';
-// import GoogleLogin from 'react-google-login';
 import SEO from '../components/Common/SEO';
-import store from '/lib/store';
-import ReactGA from 'react-ga';
+import store from '../../../lib/store';
 
 class Signup extends React.Component {
   constructor(props) {

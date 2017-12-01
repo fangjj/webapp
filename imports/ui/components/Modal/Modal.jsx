@@ -64,21 +64,22 @@ class Modal extends React.Component {
       return null;
     }
     return (
-
-      <div className="custom-modal">
-        {
-          showForgotPasswordFlag ? <RecoverPassword showLogin={this.hideForgotPassword} onClose={this.onClose} />
-          : flag ? <Signup showLogin={this.showSignup} onClose={this.onClose} />
-            : <Login showSignup={this.showSignup} showForgotPassword={this.showForgotPassword} onClose={this.onClose} />
-        }
-
-        {
-          this.props.show ? <div className="opened-modal" />
-          : null
-        }
+      <div>
+        <div>
+          {
+            this.props.show ? <div className="opened-modal" />
+            : null
+          }
+        </div>
+        <div className="custom-modal">
+          {
+            showForgotPasswordFlag ? <RecoverPassword showLogin={this.hideForgotPassword} onClose={this.onClose} />
+            : flag ? <Signup showLogin={this.showSignup} onClose={this.onClose} />
+              : <Login showSignup={this.showSignup} showForgotPassword={this.showForgotPassword} onClose={this.onClose} />
+          }
+        </div>
 
       </div>
-
     );
   }
 }
