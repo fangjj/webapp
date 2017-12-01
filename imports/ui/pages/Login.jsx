@@ -8,10 +8,10 @@ import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
 import TwitterLogin from 'react-twitter-auth';
 import ReactGA from 'react-ga';
+import store from '../../../lib/store';
 import { loginWithPassword, loginWithFacebook, loginWithGoogle } from '../components/Common/meteor-apollo-accounts';
 import {Notification} from '../components/Notification/Notification';
 import SEO from '../components/Common/SEO';
-import store from '/lib/store';
 
 class Login extends React.Component {
   constructor(props) {

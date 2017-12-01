@@ -7,7 +7,6 @@ import { Container, Grid, Header, Button } from 'semantic-ui-react';
 import HomeComment from '../components/HomeComment/HomeComment';
 import LeftSidebar from '../components/LeftSidebar/LeftSidebar';
 import Sidebar from '../components/Sidebar/Sidebar';
-import PostsList from '../components/Posts/PostsList';
 import SEO from '../components/Common/SEO';
 import { isMobile } from '../../../lib/utils/deviceDetect';
 
@@ -21,6 +20,7 @@ class Home extends Component {
       isOpen: false,
       type: ''
     };
+    this.toogleModal = this.toogleModal.bind(this);
   }
 
   toogleModal() {
@@ -49,7 +49,7 @@ class Home extends Component {
             <LeftSidebar />
             <div className="main-content">
               <div className="start">
-                <Button className="signup-button" onClick={() => this.toogleModal()} >
+                <Button className="signup-button" onClick={this.toogleModal} >
                   <img className="img-start" src="./images/start.png" alt="start" />
                 </Button>
                 <p className="start-header">Choose a number and win.<br /> As simple as that!</p>

@@ -16,6 +16,7 @@ class Modal extends React.Component {
       showSignupFlag: false,
       showForgotPasswordFlag: false
     };
+    this.onClose = this.onClose.bind(this);
   }
 
   showSignup() {
