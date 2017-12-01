@@ -63,7 +63,7 @@ const sendInvitesEmail = (root, args, context) => {
     const author = Meteor.users.findOne(userId)
     const emails = args.emails// .filter(item => item !== author.emails[0].address);
     sendMultiEmails({
-      subject: 'Invite to MO.ST😎',
+      subject: 'Invite to Casinoff😎',
       data: { user: author, url: `http://sf1.welyx.com/r/${author._id}`, title: `Thank you ${author.profile.name}` },
       template: 'invite',
       addresses: emails

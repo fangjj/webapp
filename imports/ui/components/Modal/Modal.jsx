@@ -18,14 +18,11 @@ class Modal extends React.Component {
     }
   }
 
-  componentWillMount() {
-    if(this.props.type = 'signup') {
-      this.setState({ showSignupFlag: true })
-    }
-  }
-
   showSignup = () => {
-    this.setState({ showSignupFlag: !this.state.showSignupFlag })
+    this.setState({ showSignupFlag: !this.state.showSignupFlag})
+  }
+  showLogin = () => {
+    this.setState({ showSignupFlag: false})
   }
 
   hideForgotPassword = () => {
@@ -36,6 +33,7 @@ class Modal extends React.Component {
 
   onClose = () => {
     this.setState({ showSignupFlag: false })
+    this.setState({ showForgotPasswordFlag: false })
     this.props.onClose()
   }
 
@@ -45,25 +43,31 @@ class Modal extends React.Component {
 
   render() {
     const { showSignupFlag, showForgotPasswordFlag } = this.state
+    const { type } = this.props
+
+    let flag = ''
+    if(type=='signup' && showSignupFlag == false) {
+      flag = true
+    }
+    if(type=='signup' && showSignupFlag) {
+      flag = false
+    }
+    if(type!='signup' && showSignupFlag) {
+      flag = true
+    }
 
     if(!this.props.show) {
       return null;
     }
     return(
+      
       <div className="custom-modal">
-        <div>
-          <div className="header">
-            <Button onClick={() => this.onClose()}>
-              <Icon name='remove' />
-            </Button>
-          </div>
-          {
-            showForgotPasswordFlag ? <RecoverPassword showLogin={this.hideForgotPassword}/>
-            : showSignupFlag ? <Signup showLogin={this.showSignup}/>
-              : <Login showSignup={this.showSignup} showForgotPassword={this.showForgotPassword}/>
-          }
+        {
+          showForgotPasswordFlag ? <RecoverPassword showLogin={this.hideForgotPassword} onClose={this.onClose}/>
+          : flag ? <Signup showLogin={this.showSignup} onClose={this.onClose}/>
+            : <Login showSignup={this.showSignup} showForgotPassword={this.showForgotPassword} onClose={this.onClose}/>
+        }
           
-        </div>
         {
           this.props.show ? <div className="opened-modal"></div>
           : null

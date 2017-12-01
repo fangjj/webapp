@@ -2,9 +2,9 @@ import { Accounts } from 'meteor/accounts-base'
 import getContent from '../emails/getContent'
 
 const isProduction = process.env.NODE_ENV === 'production'
-Accounts.emailTemplates.from = process.env.MAIL_FROM || '"MO.ST" <no-reply@sf1.welyx.com>'
-Accounts.emailTemplates.siteName = 'MO.ST'
-Accounts.emailTemplates.replyTo = '"MO.ST" <info@sf1.welyx.com>'
+Accounts.emailTemplates.from = process.env.MAIL_FROM || '"Casinoff" <no-reply@sf1.welyx.com>'
+Accounts.emailTemplates.siteName = 'Casinoff'
+Accounts.emailTemplates.replyTo = '"Casinoff" <info@sf1.welyx.com>'
 
 const getURL = function (path) {
   return isProduction ? `http://sf1.welyx.com${path}` : `http://localhost:3000${path}`

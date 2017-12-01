@@ -44,8 +44,8 @@ class Reputation extends React.Component {
       <Container>
         <SEO
           schema='Website'
-          title={`${t('seoTitle')} · MO.ST`}
-          description={`${t('seoDesc')} · MO.ST`}
+          title={`${t('seoTitle')} · Casinoff`}
+          description={`${t('seoDesc')} · Casinoff`}
           path='authors'
           contentType='website'
         />

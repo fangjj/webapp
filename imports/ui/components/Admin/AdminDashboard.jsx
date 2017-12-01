@@ -27,7 +27,7 @@ class AdminDashboard extends React.Component {
     return (
       <Container>
         <Item className='admin-page'>
-          <Header as='h1'>MO.ST Users (Total: {adminStat.total}, Today: {adminStat.today}, Week: {adminStat.week}, Month: {adminStat.month}, Year: {adminStat.year})</Header>
+          <Header as='h1'>Casinoff Users (Total: {adminStat.total}, Today: {adminStat.today}, Week: {adminStat.week}, Month: {adminStat.month}, Year: {adminStat.year})</Header>
           <Table singleLine>
             <Table.Header>
               <Table.Row>

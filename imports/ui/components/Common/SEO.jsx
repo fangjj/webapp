@@ -34,7 +34,7 @@ const getMetaTags = ({
     { name: 'og:image', content: image || seoImageURL(seoImages.openGraph) },
     { name: 'og:image:secure_url', content: image || seoImageURL(seoImages.openGraph) },
     { name: 'og:description', content: desc },
-    { name: 'og:site_name', content: 'MO.ST' },
+    { name: 'og:site_name', content: 'Casinoff' },
     { name: 'fb:app_id', content: '1127643753917982' }
   ]
 

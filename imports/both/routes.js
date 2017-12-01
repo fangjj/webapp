@@ -39,7 +39,7 @@ const SearchPage = () => <Bundle mod={import('../ui/components/Search/SearchPage
 
 const routes = [
   { exact: true, path: '/', component: Home },
-
+  { exact: true, path: '/home', component: Home },
   { exact: true, path: '/me', component: Dashboard },
   { exact: true, path: '/me/profile', component: Profile },
   { exact: true, path: '/me/settings', component: Settings },

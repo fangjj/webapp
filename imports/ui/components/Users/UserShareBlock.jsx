@@ -14,7 +14,7 @@ class UserShareBlock extends React.Component {
           </Card.Header>
         </Card.Content>
         <Card.Content className='body'>
-          <Share type='big' shareUrl={url} title={`Страница автора "${author}" на MO.ST`} description={bio} image={image} />
+          <Share type='big' shareUrl={url} title={`Страница автора "${author}" на Casinoff`} description={bio} image={image} />
         </Card.Content>
       </Card>
     )

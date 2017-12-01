@@ -171,7 +171,7 @@ class Signup extends React.Component {
   }
 
   render () {
-    const { t, showLogin } = this.props
+    const { t, showLogin, onClose } = this.props
 
     return (
       <div className='auth-page'>
@@ -295,16 +295,14 @@ class Signup extends React.Component {
                       onChange={() => this.setState({ gender: 'non' })}
                     />
                 </Form.Field>
-                <Form.Field>
+                <Form.Field className="auth-footer-section">
                   <p className="conditions">
                     By clicking on Sign up, you agree to Casinoff's terms & conditions and privacy policy
                   </p>
+                  <Button type='button' className="btn-cancel" onClick={onClose}>{t('common:form.cancel')}</Button>
+                  <Button disabled={!this.state.accepted} type='submit' color='green'>{t('common:form.createAccount')}</Button>
                 </Form.Field>
-                <Button disabled={!this.state.accepted} type='submit' color='green' className='fullwidth-button'>{t('common:form.createAccount')}</Button>
               </Form>
-              <div className='auth-footer text-center'>
-                <div>{t('alreadyAMember')} <u onClick={showLogin} color="green">{t('common:form.signIn')}</u></div>
-              </div>
             </div>
           </div>
         </div>

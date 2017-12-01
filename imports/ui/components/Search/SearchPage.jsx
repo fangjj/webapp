@@ -56,8 +56,8 @@ class SearchPage extends React.Component {
       {this.state.keyword
         ? <SEO
           schema='SearchResultsPage'
-          title={t('common:search.searchFor') + ' "' + this.state.keyword + '" на MO.ST'}
-          description={t('common:search.searchFor') + ' "' + this.state.keyword + '" на MO.ST'}
+          title={t('common:search.searchFor') + ' "' + this.state.keyword + '" на Casinoff'}
+          description={t('common:search.searchFor') + ' "' + this.state.keyword + '" на Casinoff'}
           path={`search/${activeSearch}/${this.state.keyword}`}
           contentType='website'
         />
@@ -72,7 +72,7 @@ class SearchPage extends React.Component {
       <Grid container columns={1}>
         <Grid.Column mobile={16} tablet={16} computer={16}>
           <Form>
-            <Form.Input placeholder={t('common:search.searchMO.ST')} className='search-field' defaultValue={keyword} onChange={this.handleSearchChange} />
+            <Form.Input placeholder={t('common:search.searchCasinoff')} className='search-field' defaultValue={keyword} onChange={this.handleSearchChange} />
           </Form>
         </Grid.Column>
       </Grid>

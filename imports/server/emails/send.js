@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor'
 import { Email } from 'meteor/email'
 
 const isProduction = process.env.NODE_ENV === 'production'
-const from = process.env.MAIL_FROM || 'MO.ST <info@sf1.welyx.com>' // send emails from
+const from = process.env.MAIL_FROM || 'Casinoff <info@sf1.welyx.com>' // send emails from
 
 const sendEmail = function ({ sync, to, subject, template, data }) {
   const html = getContent(template, data)

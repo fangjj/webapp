@@ -46,8 +46,8 @@ class NewPosts extends React.Component {
       <Container>
         <SEO
           schema='ItemList'
-          title={`${t('seoBestPostTitle')} · MO.ST`}
-          description={`${t('seoBestPostDesc')} · MO.ST`}
+          title={`${t('seoBestPostTitle')} · Casinoff`}
+          description={`${t('seoBestPostDesc')} · Casinoff`}
           path={'/best'}
           contentType='website'
         />

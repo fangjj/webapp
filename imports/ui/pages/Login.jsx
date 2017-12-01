@@ -132,7 +132,7 @@ class Login extends React.Component {
   }
 
   render () {
-    const { t, showSignup, showForgotPassword } = this.props
+    const { t, showSignup, showForgotPassword, onClose } = this.props
     return (
       <div className='auth-page'>
         <SEO
@@ -192,14 +192,15 @@ class Login extends React.Component {
                 onChange={() => this.setState({ remember: !this.state.remember })}
               />
             </Form.Field>
-            <Button type='submit' color='green' className='fullwidth-button'>{t('common:form.signIn')}</Button>
+            <Form.Field className='auth-footer-section'>
+              <div className='auth-footer'>
+                <u onClick={showForgotPassword} >{t('common:form.forgotPassword')}</u>
+                {t('common:form.noAccount')} &nbsp; <u onClick={showSignup}>{t('common:form.signUp')}</u>
+              </div>
+              <Button type='button' className="btn-cancel" onClick={onClose}>{t('common:form.cancel')}</Button>
+              <Button type='submit' color='green'>{t('common:form.signIn')}</Button>
+            </Form.Field>
           </Form>
-          <div className='auth-footer'>
-            <div>
-              <u onClick={showForgotPassword}>{t('common:form.forgotPassword')}</u>
-            </div>
-            <div>{t('common:form.noAccount')} <u onClick={showSignup}>{t('common:form.signUp')}</u></div>
-          </div>
         </div>
       </div>
     )

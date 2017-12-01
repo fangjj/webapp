@@ -63,7 +63,7 @@ class RecoverPassword extends React.Component {
 
   render () {
     const { token } = this.props.match.params
-    const { t, showLogin } = this.props
+    const { t, showLogin, onClose } = this.props
     return token
       ? (
         <div className='auth-page'>
@@ -137,11 +137,14 @@ class RecoverPassword extends React.Component {
                       onChange={(event) => this.setState({ email: event.target.value })}
                     />
                   </Form.Field>
-                  <Button type='submit' color='green' className='fullwidth-button'>{t('common:form.sendInstructions')}</Button>
+                  <Form.Field className="auth-footer-section">
+                    <div>{t('common:form.rememberPassword')} <u onClick={showLogin}>{t('common:form.signIn')}</u></div>
+                    <div>
+                      <Button type='submit' className="btn-cancel" onClick={onClose}>{t('common:form.cancel')}</Button>
+                      <Button type='submit' color='green'>{t('common:form.sendInstructions')}</Button>                    
+                    </div>
+                  </Form.Field>
                 </Form>
-                <div className='auth-footer text-center'>
-                  <div>{t('common:form.rememberPassword')} <u onClick={showLogin}>{t('common:form.signIn')}</u></div>
-                </div>
               </div>
             </div>
           </div>

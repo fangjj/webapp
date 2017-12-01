@@ -69,7 +69,7 @@ class MobileFooter extends React.Component {
           </div>
           <div className='menu-copyright'>
             <div className='copyright'>
-              MO.ST © 2015-2017. {t('common:footer.allRightsReserved')} <span className='age-law'>12+</span>
+              CasinoffT © 2015-2017. {t('common:footer.allRightsReserved')} <span className='age-law'>12+</span>
             </div>
             <List horizontal className='payment-menu'>
               <List.Item>

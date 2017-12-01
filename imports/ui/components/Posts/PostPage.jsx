@@ -280,7 +280,7 @@ class PostPage extends React.Component {
                     trigger={<Label basic className='post-share-label'><Icon name='share alternate' color='grey' /><span>0</span></Label>}
                     content={<Share
                       shareUrl={`/p/${post._id}/${post.slug}`}
-                      title={`Читайте стих "${post.title}" на MO.ST`}
+                      title={`Читайте стих "${post.title}" на Casinoff`}
                       description={postBody.length > 300 ? postBody.substring(0, 300) + '...' : postBody}
                       image={post.coverImg}
                       hashtags={postTags}

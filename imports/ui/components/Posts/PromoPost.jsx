@@ -29,7 +29,7 @@ const PromoPost = () => {
               to='/promo'
               className='link-promo-about'
             >
-              Ads on MO.ST
+              Ads on Casinoff
             </Link>
           </div>
         </Item.Content>

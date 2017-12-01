@@ -24,7 +24,7 @@ const VKIcon = generateShareIcon('vk')
 class Share extends React.Component {
   render () {
     const shareUrl = this.props.shareUrl ? `http://sf1.welyx.com${this.props.shareUrl}` : 'http://sf1.welyx.com'
-    const title = this.props.title ? this.props.title : 'MO.ST - Вкусные стихи и проза. Публикуйся и читай бесплатно.'
+    const title = this.props.title ? this.props.title : 'Casinoff - Вкусные стихи и проза. Публикуйся и читай бесплатно.'
     const description = this.props.description ? this.props.description : 'Самое уютное сообщество писателей и читателей. Пиши стихи, читай и слушай книги бесплатно. Подбор рифмы к слову онлайн. Создание фото для Instagram, VK и других'
     const image = this.props.image ? this.props.image : 'https://cdnryfma.s3.amazonaws.com/defaults/icons/default_full_avatar.jpg'
     const via = 'ryfma'

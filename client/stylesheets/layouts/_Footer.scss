@@ -62,6 +62,17 @@
   }
   .btn-social {
     padding: 0 !important;
+    .btn-social-groups {
+      display: flex;
+      text-align: right;
+      float: right;
+      padding: 10px;
+      border: 1px solid #545454;
+      border-radius: 50px;
+      .share-button {
+        margin-right: 15px;
+      }
+    }
   }
   .android-app {
     .button {

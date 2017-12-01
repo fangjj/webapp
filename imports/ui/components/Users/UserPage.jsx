@@ -69,7 +69,7 @@ class UserPage extends React.Component {
       <Container>
         <SEO
           schema='ProfilePage'
-          title={user.profile.name + ' ·  MO.ST'}
+          title={user.profile.name + ' ·  Casinoff'}
           description={user.profile.bio}
           path={`u/${user.username}`}
           contentType='profile'
