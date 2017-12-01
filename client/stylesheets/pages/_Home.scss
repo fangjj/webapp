@@ -7,6 +7,11 @@
         .main-content {
             background: #0e0e0e;
             width: calc(100% - 280px);
+            .start-header {
+                font-family: 'DIN_Medium';
+                font-size: 41px;
+                margin-top: 20px;
+            }
             .start {
                 text-align: center;
                 color: #ffffff;
