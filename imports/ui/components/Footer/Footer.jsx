@@ -68,20 +68,20 @@ const Footer = ({ t, isMobile }) => (
             <List.Item><Link to="/">{t('common:footer.blog')}</Link></List.Item>
           </List>
         </Grid.Column>
-        <Grid.Column width={3}>
+        <Grid.Column width={2}>
           <List link inverted>
             <List.Item><Link to="/">{t('common:footer.workatCasino')}</Link></List.Item>
             <List.Item><Link to="/">{t('common:footer.affiliates')}</Link></List.Item>
             <List.Item><Link to="/">{t('common:footer.privacy')}</Link></List.Item>
           </List>
         </Grid.Column>
-        <Grid.Column width={3}>
+        <Grid.Column width={2}>
           <List link inverted>
             <List.Item><Link to="/">{t('common:footer.contact')}</Link></List.Item>
             <List.Item><Link to="/">{t('common:footer.termsConditions')}</Link></List.Item>
           </List>
         </Grid.Column>
-        <Grid.Column width={4} className="flag-section">
+        <Grid.Column width={8} textAlign="right">
           <Button><img src="./images/contact.png" alt="country" /></Button>
           <img src="./images/russia.png" className="image-padding" alt="country" />
           <img src="./images/japan.png" className="image-padding" alt="country" />
@@ -90,13 +90,13 @@ const Footer = ({ t, isMobile }) => (
           <img src="./images/uk.png" className="image-padding" alt="country" />
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row textAlign="center" className="social-section">
-        <Grid.Column width={7} className="gambling">
+      <Grid.Row className="social-section">
+        <Grid.Column width={8} className="gambling">
           <img src="./images/gam-image.png" alt="country" />
           <img src="./images/begamble.png" alt="country" />
           <img src="./images/gambling.png" alt="country" />
         </Grid.Column>
-        <Grid.Column width={7} textAlign="right" className="btn-social">
+        <Grid.Column width={8} textAlign="right" className="btn-social">
           <div className="btn-social-groups">
             <FacebookShareButton
               url={shareUrl}

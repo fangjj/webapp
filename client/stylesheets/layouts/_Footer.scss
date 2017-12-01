@@ -7,7 +7,8 @@
   }
   .ui.grid > .row {
     &.pages-links {
-      padding: 2em 0 3em 0;
+      // padding: 2em 0 3em 0;
+      padding-top: 40px;
       .ui.link.list .item, .ui.link.list a.item, .ui.link.list .item a:not(.ui) {
         &.header {
           font-size: 1.3em;
