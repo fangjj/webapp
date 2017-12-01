@@ -1,186 +1,139 @@
-import React from 'react'
-import { translate } from 'react-i18next'
-import { withApollo } from 'react-apollo'
-import { withCookies } from 'react-cookie'
-import { Link, withRouter } from 'react-router-dom'
-import FacebookLogin from 'react-facebook-login'
-import GoogleLogin from 'react-google-login'
-import TwitterLogin from 'react-twitter-auth'
-import { loginWithPassword, loginWithFacebook, loginWithGoogle } from '../components/Common/meteor-apollo-accounts'
-import {Notification} from '../components/Notification/Notification'
-import SEO from '../components/Common/SEO'
-import store from '/lib/store'
-import ReactGA from 'react-ga'
-
-import { Header, Form, Button, Input, Icon, Label, Checkbox } from 'semantic-ui-react'
+import React from 'react';
+import { Header, Form, Button, Input, Icon, Label, Checkbox } from 'semantic-ui-react';
+import { translate } from 'react-i18next';
+import { withApollo } from 'react-apollo';
+import { withCookies } from 'react-cookie';
+import { Link, withRouter } from 'react-router-dom';
+import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
+import TwitterLogin from 'react-twitter-auth';
+import ReactGA from 'react-ga';
+import { loginWithPassword, loginWithFacebook, loginWithGoogle } from '../components/Common/meteor-apollo-accounts';
+import {Notification} from '../components/Notification/Notification';
+import SEO from '../components/Common/SEO';
+import store from '/lib/store';
 
 class Login extends React.Component {
-
-  static propTypes = {
-    showSignup: PropTypes.func.isRequired
-  }
-
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
       emailUsername: '',
       password: '',
       remember: false
-    }
+    };
 
-    this.login = this.login.bind(this)
-    this.loginFacebook = this.loginFacebook.bind(this)
-    this.loginGoogle = this.loginGoogle.bind(this)
-    this.loginTwitter = this.loginTwitter.bind(this)
+    this.login = this.login.bind(this);
+    this.loginFacebook = this.loginFacebook.bind(this);
   }
 
-  componentDidMount () {
-    const token = store.getItem('Meteor.loginToken') || null
+  componentDidMount() {
+    const token = store.getItem('Meteor.loginToken') || null;
     if (token) {
-      this.props.history.push('/')
+      this.props.history.push('/');
     }
   }
 
-  redirectToApp = () => {
-    Notification.success(this.props.t('common:notif.logged'))
-    this.props.cookies.set('meteor_login_token', store.getItem('Meteor.loginToken'), { path: '/' })
-    this.props.history.push('/?refresh')
-    this.props.client.resetStore()
+  redirectToApp() {
+    Notification.success(this.props.t('common:notif.logged'));
+    this.props.cookies.set('meteor_login_token', store.getItem('Meteor.loginToken'), { path: '/' });
+    this.props.history.push('/?refresh');
+    this.props.client.resetStore();
   }
 
   // Password Auth
-  async login (event) {
-    event.preventDefault()
+  async login(event) {
+    event.preventDefault();
 
-    const email = this.state.emailUsername
-    const username = this.state.emailUsername
-    const password = this.state.password
+    const email = this.state.emailUsername;
+    const username = this.state.emailUsername;
+    const {password} = this.state;
     const loginObject = email.indexOf('@') > -1
       ? { email, password }
-      : { username, password }
+      : { username, password };
 
     try {
-      await loginWithPassword(loginObject, this.props.client)
+      await loginWithPassword(loginObject, this.props.client);
       ReactGA.event({
         category: 'User',
         action: 'LoginWithEmail'
-      })
-      this.redirectToApp()
+      });
+      this.redirectToApp();
     } catch (error) {
-      Notification.error(error)
+      Notification.error(error);
     }
   }
 
   // Facebook Auth
-  async loginFacebook ({ accessToken }) {
+  async loginFacebook({ accessToken }) {
     try {
-      await loginWithFacebook({ accessToken }, this.props.client)
+      await loginWithFacebook({ accessToken }, this.props.client);
       ReactGA.event({
         category: 'User',
         action: 'LoginWithFacebook'
-      })
-      this.redirectToApp()
+      });
+      this.redirectToApp();
     } catch (error) {
-      Notification.error(error)
+      Notification.error(error);
     }
   }
 
-  responseFacebook (response) {
-    if (!response.accessToken) return
-    this.loginFacebook(response)
+  responseFacebook(response) {
+    if (!response.accessToken) return;
+    this.loginFacebook(response);
   }
 
-  // Google Auth
-  async loginGoogle ({ accessToken }) {
-    console.log('Login to Google')
-    try {
-      await loginWithGoogle({ accessToken }, this.props.client)
-      ReactGA.event({
-        category: 'User',
-        action: 'LoginWithGoogle'
-      })
-      this.redirectToApp()
-    } catch (error) {
-      Notification.error(error)
-    }
-  }
-
-  responseGoogle (response) {
-    if (!response.accessToken) return
-    this.loginGoogle(response)
-  }
-
-  // Twitter Auth
-  async loginTwitter (props) {
-    return
-    try {
-      // await loginWithGoogle({ accessToken }, this.props.client)
-      ReactGA.event({
-        category: 'User',
-        action: 'LoginWithTwitter'
-      })
-      this.redirectToApp()
-    } catch (error) {
-      Notification.error(error)
-    }
-  }
-
-  responseTwitter (response) {
-    console.log(response)
-    if (!response.accessToken) return
-    this.loginTwitter(response)
-  }
-
-  render () {
-    const { t, showSignup, showForgotPassword, onClose } = this.props
+  render() {
+    const { t, showSignup, showForgotPassword, onClose } = this.props;
     return (
-      <div className='auth-page'>
+      <div className="auth-page">
         <SEO
-          schema='Webpage'
+          schema="Webpage"
           title={t('seoTitle')}
           description={t('seoDesc')}
-          path='/login'
-          contentType='product'
+          path="/login"
+          contentType="product"
         />
-        <div className='inner'>
-          <div className='social-login'>
+        <div className="inner">
+          <div className="social-login">
             <FacebookLogin
-              cssClass='facebook-login-button'
-              appId='1127643753917982'
-              fields='name,email,picture'
-              scope='public_profile,email'
+              cssClass="facebook-login-button"
+              appId="1127643753917982"
+              fields="name,email,picture"
+              scope="public_profile,email"
               callback={() => this.responseFacebook()}
-              textButton=''
-              icon={<span><Icon name='facebook f' />Login with Facebook</span>}
-            />                
+              textButton=""
+              icon={<span><Icon name="facebook f" />Login with Facebook</span>}
+            />
           </div>
 
-          <div className='text-separator'>
-            <span className='label'>{t('common:or')}</span>
+          <div className="text-separator">
+            <span className="label">{t('common:or')}</span>
           </div>
 
           <Form onSubmit={this.login}>
             <h3>Log in using e-mail</h3>
             <Form.Field>
-              <Label content="E-mail" className="label"/>
+              <Label content="E-mail" className="label" />
               <Input
-                icon='mail' iconPosition='left'
-                name='emailUsername'
-                placeholder={t('common:form.emailUsername')}
-                type='text'
-                required='true'
+                icon="mail"
+                iconPosition="left"
+                name="emailUsername"
+                placeholder={t('common:form.emailPlaceholder')}
+                type="text"
+                required="true"
                 value={this.state.emailUsername}
                 onChange={(event) => this.setState({ emailUsername: event.target.value })}
               />
             </Form.Field>
             <Form.Field>
-              <Label content="Password" className="label"/>
+              <Label content="Password" className="label" />
               <Input
-                icon='lock' iconPosition='left'
-                name='password'
+                icon="lock"
+                iconPosition="left"
+                name="password"
                 placeholder={t('common:form.password')}
-                type='password'
-                required='true'
+                type="password"
+                required="true"
                 value={this.state.password}
                 onChange={(event) => this.setState({ password: event.target.value })}
               />
@@ -188,23 +141,23 @@ class Login extends React.Component {
             <Form.Field>
               <Checkbox
                 value="remember"
-                label='Remember me'
+                label="Remember me"
                 onChange={() => this.setState({ remember: !this.state.remember })}
               />
             </Form.Field>
-            <Form.Field className='auth-footer-section'>
-              <div className='auth-footer'>
+            <Form.Field className="auth-footer-section">
+              <div className="auth-footer">
                 <u onClick={showForgotPassword} >{t('common:form.forgotPassword')}</u>
                 {t('common:form.noAccount')} &nbsp; <u onClick={showSignup}>{t('common:form.signUp')}</u>
               </div>
-              <Button type='button' className="btn-cancel" onClick={onClose}>{t('common:form.cancel')}</Button>
-              <Button type='submit' color='green'>{t('common:form.signIn')}</Button>
+              <Button type="button" className="btn-cancel" onClick={onClose}>{t('common:form.cancel')}</Button>
+              <Button type="submit" color="green">{t('common:form.signIn_min')}</Button>
             </Form.Field>
           </Form>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default translate('login')(withCookies(withApollo(withRouter(Login))))
+export default translate('login')(withCookies(withApollo(withRouter(Login))));
