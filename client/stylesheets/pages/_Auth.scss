@@ -75,6 +75,10 @@
   .ui.form .field .ui.input input {
     height: 3rem;
   }
+  .ui.form .field .ui.input input:focus {
+    border-color: #204cef;
+    border-width: 2px;
+  }
   .fullwidth-button {
     font-size: 1.2em!important;
     border-radius: 4px!important;
