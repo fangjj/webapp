@@ -52,7 +52,7 @@
   }
   .ui.form {
     h3 {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       font-weight: normal;
       font-family: 'DIN_Light';
       font-size: 25px;
@@ -70,6 +70,7 @@
     .conditions {
       text-align: left;
       font-size: 12px;
+      font-weight: bold;
     }
   } 
   .ui.form .field .ui.input input {
@@ -116,5 +117,8 @@
         display: block;
       }
     }
+  }
+  .marginAbove {
+    margin-top: 20px;
   }
 }

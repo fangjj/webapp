@@ -106,9 +106,10 @@ class Login extends React.Component {
             />
           </div>
 
-          <div className="text-separator">
+          <div className="marginAbove">
             <span className="label">{t('common:or')}</span>
           </div>
+          <div className="text-separator" />
 
           <Form onSubmit={this.login}>
             <h3>Log in using e-mail</h3>

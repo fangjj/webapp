@@ -195,13 +195,15 @@ class Signup extends React.Component {
                   icon={<span><Icon name="facebook f" />Sing up with Facebook</span>}
                 />
               </div>
-
-              <div className="text-separator">
+              <div className="marginAbove">
                 <span className="label">{t('common:or')}</span>
               </div>
+              <div className="text-separator" />
 
               <Form onSubmit={this.register}>
-                <h3>Sign up with your e-mail address</h3>
+                <h3>
+                  Sign up with your e-mail address
+                </h3>
                 <Form.Field>
                   <Label content="E-mail" className="label" />
                   <Input
@@ -309,7 +311,7 @@ class Signup extends React.Component {
                     By clicking on Sign up, you agree to Casinoff's terms & conditions and privacy policy
                   </p>
                   <Button type="button" className="btn-cancel" onClick={onClose}>{t('common:form.cancel')}</Button>
-                  <Button disabled={!this.state.accepted} type="submit" color="green">{t('common:form.createAccount')}</Button>
+                  <Button disabled={!this.state.accepted} type="submit" color="green">{t('common:form.signUp_min')}</Button>
                 </Form.Field>
               </Form>
             </div>
