@@ -67,11 +67,15 @@ class Modal extends React.Component {
       <div>
         <div>
           {
-            this.props.show ? <div className="opened-modal" />
+            this.props.show ? <div className="opened-modal" onClick={this.onClose} />
             : null
           }
         </div>
+        
         <div className="custom-modal">
+        <div style={{ position: 'absolute', top: 0, right: -45 }}>
+          <img className="img-close" width="25" height="25" src="./images/close_button.png" alt="close" onClick={this.onClose} />
+        </div>
           {
             showForgotPasswordFlag ? <RecoverPassword showLogin={this.hideForgotPassword} onClose={this.onClose} />
             : flag ? <Signup showLogin={this.showSignup} onClose={this.onClose} />

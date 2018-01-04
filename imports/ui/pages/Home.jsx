@@ -48,6 +48,9 @@ class Home extends Component {
           <div className="inner">
             <LeftSidebar />
             <div className="main-content">
+              <div style={{ position: 'absolute', top: 10, left: 330 }} onClick={this.onClose} >
+                <img className="img-close-sidebar" width="25" height="25" src="./images/close.png" alt="close-sidebar" />  
+              </div>
               <div className="start">
                 <Button className="signup-button" onClick={this.toogleModal} >
                   <img className="img-start" src="./images/start.png" alt="start" />

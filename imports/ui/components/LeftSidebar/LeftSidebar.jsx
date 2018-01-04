@@ -10,6 +10,7 @@ import store from '../../../../lib/store';
 class LeftSidebar extends Component {
   render() {
     return (
+
       <div id="left-sidebar" className="left-sidebar">
         <Link to="/" className="logo" itemProp="url">
           <LazyLoad height={60} once placeholder={<div className="ui avatar image img-placeholder" />}>
